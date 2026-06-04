@@ -17,7 +17,7 @@ function ExpenseChart({ expenses }) {
   }, []);
 
   if (data.length === 0) {
-    return <p className="empty-state">No data for chart yet</p>;
+    return <p className="empty-state">Add expenses to see where your money goes 📊</p>;
   }
 
   return (

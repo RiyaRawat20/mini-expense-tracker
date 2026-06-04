@@ -9,7 +9,7 @@ function ExpenseList({ expenses, onDelete, onEdit }) {
   };
 
   if (expenses.length === 0) {
-    return <p className="empty-state">No expenses found. Add one above!</p>;
+    return <p className="empty-state">Looks like your wallet is taking a break! 💸</p>;
   }
 
   return (
