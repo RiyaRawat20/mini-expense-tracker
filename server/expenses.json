@@ -1,6 +1,20 @@
 [
   {
-    "id": "894e5f9e-5034-4f3d-8756-7e578d56d30e",
+    "id": "c72476c9-7d49-4146-ba43-e2e351113923",
+    "amount": 1000,
+    "category": "Entertainment",
+    "date": "2026-03-15",
+    "note": ""
+  },
+  {
+    "id": "8a25d728-6495-44c2-9793-1f7f4740f8ef",
+    "amount": 2000,
+    "category": "Bills",
+    "date": "2026-01-14",
+    "note": ""
+  },
+  {
+    "id": "7ad6c1c4-2fe4-42d3-ab31-265f2bb9647b",
     "amount": 5000,
     "category": "Food",
     "date": "2026-06-01",

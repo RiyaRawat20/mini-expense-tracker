@@ -12,14 +12,21 @@ function filterExpenses(expenses, filters) {
     const matchCategory = filters.category === "All" || e.category === filters.category;
     const expDate = new Date(e.date);
     let matchDate = true;
+
     if (filters.dateRange === "thisMonth") {
-      matchDate = expDate.getMonth() === now.getMonth() && expDate.getFullYear() === now.getFullYear();
+      matchDate = expDate.getMonth() === now.getMonth() && 
+                  expDate.getFullYear() === now.getFullYear();
     } else if (filters.dateRange === "lastMonth") {
       const last = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-      matchDate = expDate.getMonth() === last.getMonth() && expDate.getFullYear() === last.getFullYear();
+      matchDate = expDate.getMonth() === last.getMonth() && 
+                  expDate.getFullYear() === last.getFullYear();
+    } else if (filters.dateRange === "byMonth" && filters.month !== "" && filters.year) {
+      matchDate = expDate.getMonth() === Number(filters.month) && 
+                  expDate.getFullYear() === Number(filters.year);
     } else if (filters.dateRange === "custom" && filters.startDate && filters.endDate) {
       matchDate = e.date >= filters.startDate && e.date <= filters.endDate;
     }
+
     return matchCategory && matchDate;
   });
 }
@@ -44,6 +51,8 @@ function App() {
     dateRange: "all",
     startDate: "",
     endDate: "",
+    month: "",
+    year: "",
   });
   const [loading, setLoading] = useState(true);
 
